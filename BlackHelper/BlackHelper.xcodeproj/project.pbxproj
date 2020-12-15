@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		4CF3641B2588A96300E60F6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3641A2588A96300E60F6F /* AppDelegate.swift */; };
 		4CF3641D2588A96300E60F6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3641C2588A96300E60F6F /* SceneDelegate.swift */; };
-		4CF3641F2588A96300E60F6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3641E2588A96300E60F6F /* ViewController.swift */; };
+		4CF3641F2588A96300E60F6F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3641E2588A96300E60F6F /* MainViewController.swift */; };
 		4CF364222588A96300E60F6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF364202588A96300E60F6F /* Main.storyboard */; };
 		4CF364242588A96400E60F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF364232588A96400E60F6F /* Assets.xcassets */; };
 		4CF364272588A96400E60F6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF364252588A96400E60F6F /* LaunchScreen.storyboard */; };
 		4CF364322588A96400E60F6F /* BlackHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF364312588A96400E60F6F /* BlackHelperTests.swift */; };
 		4CF3643D2588A96400E60F6F /* BlackHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3643C2588A96400E60F6F /* BlackHelperUITests.swift */; };
+		4CF3645A2588CE5200E60F6F /* WebLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF364592588CE5200E60F6F /* WebLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 		4CF364172588A96300E60F6F /* BlackHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF3641A2588A96300E60F6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF3641C2588A96300E60F6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4CF3641E2588A96300E60F6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CF3641E2588A96300E60F6F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4CF364212588A96300E60F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CF364232588A96400E60F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CF364262588A96400E60F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		4CF364382588A96400E60F6F /* BlackHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF3643C2588A96400E60F6F /* BlackHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackHelperUITests.swift; sourceTree = "<group>"; };
 		4CF3643E2588A96400E60F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CF364592588CE5200E60F6F /* WebLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,8 @@
 			children = (
 				4CF3641A2588A96300E60F6F /* AppDelegate.swift */,
 				4CF3641C2588A96300E60F6F /* SceneDelegate.swift */,
-				4CF3641E2588A96300E60F6F /* ViewController.swift */,
+				4CF3641E2588A96300E60F6F /* MainViewController.swift */,
+				4CF364592588CE5200E60F6F /* WebLoginViewController.swift */,
 				4CF364202588A96300E60F6F /* Main.storyboard */,
 				4CF364232588A96400E60F6F /* Assets.xcassets */,
 				4CF364252588A96400E60F6F /* LaunchScreen.storyboard */,
@@ -258,7 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF3641F2588A96300E60F6F /* ViewController.swift in Sources */,
+				4CF3641F2588A96300E60F6F /* MainViewController.swift in Sources */,
+				4CF3645A2588CE5200E60F6F /* WebLoginViewController.swift in Sources */,
 				4CF3641B2588A96300E60F6F /* AppDelegate.swift in Sources */,
 				4CF3641D2588A96300E60F6F /* SceneDelegate.swift in Sources */,
 			);
@@ -366,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -437,7 +441,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A7NLL8RWAU;
 				INFOPLIST_FILE = BlackHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,7 +461,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A7NLL8RWAU;
 				INFOPLIST_FILE = BlackHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
