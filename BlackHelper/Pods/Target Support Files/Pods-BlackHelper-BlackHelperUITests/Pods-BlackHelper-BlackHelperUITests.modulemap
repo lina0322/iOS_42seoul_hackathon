@@ -1,0 +1,6 @@
+framework module Pods_BlackHelper_BlackHelperUITests {
+  umbrella header "Pods-BlackHelper-BlackHelperUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
