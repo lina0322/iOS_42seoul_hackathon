@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "status bar.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "status bar@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "gon_cover.jpg",
+      "filename" : "status bar@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
