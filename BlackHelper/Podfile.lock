@@ -2,24 +2,34 @@ PODS:
   - AeroGearHttp (2.0.0)
   - AeroGearOAuth2 (2.1.0):
     - AeroGearHttp (= 2.0.0)
+  - CocoaLumberjack (3.7.0):
+    - CocoaLumberjack/Core (= 3.7.0)
+  - CocoaLumberjack/Core (3.7.0)
+  - SVGKit (2.1.1):
+    - CocoaLumberjack (~> 3.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - AeroGearHttp
   - AeroGearOAuth2
+  - SVGKit
   - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - AeroGearHttp
     - AeroGearOAuth2
+    - CocoaLumberjack
+    - SVGKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   AeroGearHttp: 65bf374aefd3521e1d8d33547e4db96047b745aa
   AeroGearOAuth2: 4d14442db32625602fb2371f4739360801a1a260
+  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
+  SVGKit: 652cdf7bef8bec8564d04a8511d3ab50c7595fac
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: adab71368554988930ffa1b68670e07f7d6bc370
+PODFILE CHECKSUM: 7611b3fa84b22a6efc1b6b2c7e922591dd0e55c4
 
 COCOAPODS: 1.10.0

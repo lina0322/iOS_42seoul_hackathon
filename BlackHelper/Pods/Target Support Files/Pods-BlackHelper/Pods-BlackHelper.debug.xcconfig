@@ -1,10 +1,12 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+CLANG_CXX_LANGUAGE_STANDARD = gnu++11
+CLANG_CXX_LIBRARY = libc++
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AeroGearHttp" "${PODS_CONFIGURATION_BUILD_DIR}/AeroGearOAuth2" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AeroGearHttp" "${PODS_CONFIGURATION_BUILD_DIR}/AeroGearOAuth2" "${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack" "${PODS_CONFIGURATION_BUILD_DIR}/SVGKit" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AeroGearHttp/AeroGearHttp.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/AeroGearOAuth2/AeroGearOAuth2.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AeroGearHttp/AeroGearHttp.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/AeroGearOAuth2/AeroGearOAuth2.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SVGKit/SVGKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON/SwiftyJSON.framework/Headers" $(SDKROOT)/usr/include/libxml2
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "AeroGearHttp" -framework "AeroGearOAuth2" -framework "Security" -framework "SwiftyJSON"
+OTHER_LDFLAGS = $(inherited) -l"xml2" -framework "AeroGearHttp" -framework "AeroGearOAuth2" -framework "CocoaLumberjack" -framework "CoreText" -framework "QuartzCore" -framework "SVGKit" -framework "Security" -framework "SwiftyJSON"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

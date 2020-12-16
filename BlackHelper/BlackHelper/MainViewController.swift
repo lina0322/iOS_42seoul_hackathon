@@ -6,7 +6,10 @@
 //
 
 import UIKit
+import SwiftyJSON
 
+let baseURL = "https://api.intra.42.fr/v2/"
+var me: CadetProfile?
 class MainViewController: UIViewController {
     
     @IBOutlet weak var loginButtonImage: UIImageView!
@@ -23,6 +26,8 @@ class MainViewController: UIViewController {
         if Check.login.success {
             
             //여기서 작업하세요.
+            setupAPIData()
+            
             
             guard let homeViewVC = self.storyboard?.instantiateViewController(withIdentifier: "TapBar") else { return }
             homeViewVC.modalPresentationStyle = .fullScreen
@@ -39,5 +44,42 @@ class MainViewController: UIViewController {
         loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true, completion: nil)
     }
+}
+
+func setupAPIData() {
+
+    // Get info about current token user
+    request(url: baseURL + "me") { (responseJSON) in
+        guard let data = responseJSON else { return }
+        print(data)
+        me = CadetProfile(data: data)
+        print(me?.username)
+    }
+    print(me?.username)
+}
+
+
+func request(url: String, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, completionHandler: @escaping ((JSON?) -> Void)) {
+    let token = code
+    print("code : !!!!!"+token)
+    let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    let realURL = URL(string: encodedURL!)
+    var request = URLRequest(url: realURL!)
+    request.cachePolicy = cachePolicy
+    request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    
+    URLSession.shared.dataTask(with: request) { (data, response, error) in
+        DispatchQueue.main.async {
+            
+            guard let data = data, let valueJSON = try? JSON(data: data) else {
+                print("Request Error: Couldn't get data after request...")
+                print(response ?? "NO RESPONSE")
+                
+                return
+                
+            }
+            completionHandler(valueJSON)
+        }
+    }.resume()
 }
 

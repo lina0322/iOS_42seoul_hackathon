@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-
+var code: String = ""
 class WebLoginViewController: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var LoginwebView: WKWebView!
@@ -30,7 +30,8 @@ class WebLoginViewController: UIViewController, WKNavigationDelegate {
         let strUrl :String = webView.url!.absoluteString
         if (strUrl.range(of: "code") != nil)
         {
-            let code = strUrl.split(separator: "=")[1]
+            code = String(strUrl.split(separator: "=")[1])
+            done()
         }
         else{
             print("nope")

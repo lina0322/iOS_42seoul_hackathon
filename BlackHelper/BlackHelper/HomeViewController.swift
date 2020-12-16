@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let background = UIImage(named: "lee_cover") {
+        if let background = UIImage(named: Coalition.init(rawValue: "lee")!.cover) {
             backgroundView.backgroundColor = UIColor(patternImage: background)
         }
         
