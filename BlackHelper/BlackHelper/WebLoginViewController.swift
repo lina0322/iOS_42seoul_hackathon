@@ -7,27 +7,28 @@
 
 import UIKit
 import WebKit
+
 var code: String = ""
-class WebLoginViewController: UIViewController, WKNavigationDelegate {
+class WebLoginViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
-    @IBOutlet weak var LoginwebView: WKWebView!
+    @IBOutlet weak var LoginWebView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        LoginWebView.uiDelegate = self
+        LoginWebView.navigationDelegate = self
         open42LoginPage()
-        LoginwebView.navigationDelegate = self
-        
     }
     
     func open42LoginPage() {
         if let url = URL(string:
-                            "https://api.intra.42.fr/oauth/authorize?client_id=9ed59a92caf24a4acce31ee4a08d1b1590bda83f184d5743d54f6181a6a15744&redirect_uri=http%3A%2F%2Flocalhost%2Foauth2callback&response_type=code") {
+                            "https://api.intra.42.fr/oauth/authorize?client_id=9ed59a92caf24a4acce31ee4a08d1b1590bda83f184d5743d54f6181a6a15744&redirect_uri=http%3A%2F%2F192.168.0.5&response_type=code") {
             let request: URLRequest = URLRequest(url: url)
-            LoginwebView.load(request)
+            LoginWebView.load(request)
         }
     }
     
     func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        let strUrl :String = webView.url!.absoluteString
+        let strUrl : String = webView.url!.absoluteString
         if (strUrl.range(of: "code") != nil)
         {
             code = String(strUrl.split(separator: "=")[1])
@@ -38,13 +39,15 @@ class WebLoginViewController: UIViewController, WKNavigationDelegate {
         }
     }
     
-    
     @IBAction func back() {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func done() {
         Check.login.success = true
+        
         dismiss(animated: true, completion: nil)
     }
+    
+    
 }
