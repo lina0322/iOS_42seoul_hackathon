@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "HELPER button.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "HELPER button@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "gon_cover.jpg",
+      "filename" : "HELPER button@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
