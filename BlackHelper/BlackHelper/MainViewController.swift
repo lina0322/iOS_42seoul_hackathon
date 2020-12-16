@@ -66,6 +66,8 @@ func request(url: String, cachePolicy: URLRequest.CachePolicy = .useProtocolCach
     let realURL = URL(string: encodedURL!)
     var request = URLRequest(url: realURL!)
     request.cachePolicy = cachePolicy
+    request.httpMethod = "GET"
+    request.
     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
