@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-BlackHelper-BlackHelperUITests/Pods-BlackHelper-BlackHelperUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AeroGearHttp/AeroGearHttp.framework
 ${BUILT_PRODUCTS_DIR}/AeroGearOAuth2/AeroGearOAuth2.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework

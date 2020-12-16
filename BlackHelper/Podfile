@@ -6,6 +6,7 @@ target 'BlackHelper' do
   use_frameworks!
 	pod 'AeroGearHttp'
 	pod 'AeroGearOAuth2'
+  pod 'SwiftyJSON'
   # Pods for BlackHelper
 
   target 'BlackHelperTests' do

@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C69D303258A0D9B0019D033 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69D302258A0D9B0019D033 /* HomeViewController.swift */; };
+		4C69D30B258A0ED40019D033 /* CheckLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69D30A258A0ED40019D033 /* CheckLogin.swift */; };
+		4C69D310258A112E0019D033 /* TapBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69D30F258A112E0019D033 /* TapBarViewController.swift */; };
+		4C69D319258A30320019D033 /* Cadet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69D318258A30320019D033 /* Cadet.swift */; };
 		4CF3641B2588A96300E60F6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3641A2588A96300E60F6F /* AppDelegate.swift */; };
 		4CF3641D2588A96300E60F6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3641C2588A96300E60F6F /* SceneDelegate.swift */; };
 		4CF3641F2588A96300E60F6F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF3641E2588A96300E60F6F /* MainViewController.swift */; };
@@ -41,6 +45,10 @@
 /* Begin PBXFileReference section */
 		23DBC9D2C81CFA8861AC5741 /* Pods-BlackHelperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlackHelperTests.debug.xcconfig"; path = "Target Support Files/Pods-BlackHelperTests/Pods-BlackHelperTests.debug.xcconfig"; sourceTree = "<group>"; };
 		45F2743B645D2968FACB90C1 /* Pods_BlackHelperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlackHelperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C69D302258A0D9B0019D033 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4C69D30A258A0ED40019D033 /* CheckLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLogin.swift; sourceTree = "<group>"; };
+		4C69D30F258A112E0019D033 /* TapBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarViewController.swift; sourceTree = "<group>"; };
+		4C69D318258A30320019D033 /* Cadet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cadet.swift; sourceTree = "<group>"; };
 		4CF364172588A96300E60F6F /* BlackHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF3641A2588A96300E60F6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF3641C2588A96300E60F6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,8 +128,12 @@
 			children = (
 				4CF3641A2588A96300E60F6F /* AppDelegate.swift */,
 				4CF3641C2588A96300E60F6F /* SceneDelegate.swift */,
+				4C69D318258A30320019D033 /* Cadet.swift */,
+				4C69D30A258A0ED40019D033 /* CheckLogin.swift */,
 				4CF3641E2588A96300E60F6F /* MainViewController.swift */,
 				4CF364592588CE5200E60F6F /* WebLoginViewController.swift */,
+				4C69D30F258A112E0019D033 /* TapBarViewController.swift */,
+				4C69D302258A0D9B0019D033 /* HomeViewController.swift */,
 				4CF364202588A96300E60F6F /* Main.storyboard */,
 				4CF364232588A96400E60F6F /* Assets.xcassets */,
 				4CF364252588A96400E60F6F /* LaunchScreen.storyboard */,
@@ -158,7 +170,6 @@
 				23DBC9D2C81CFA8861AC5741 /* Pods-BlackHelperTests.debug.xcconfig */,
 				5CC354FE5F23FC4A2C5E8DBE /* Pods-BlackHelperTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -410,10 +421,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C69D303258A0D9B0019D033 /* HomeViewController.swift in Sources */,
 				4CF3641F2588A96300E60F6F /* MainViewController.swift in Sources */,
 				4CF3645A2588CE5200E60F6F /* WebLoginViewController.swift in Sources */,
 				4CF3641B2588A96300E60F6F /* AppDelegate.swift in Sources */,
+				4C69D310258A112E0019D033 /* TapBarViewController.swift in Sources */,
+				4C69D30B258A0ED40019D033 /* CheckLogin.swift in Sources */,
 				4CF3641D2588A96300E60F6F /* SceneDelegate.swift in Sources */,
+				4C69D319258A30320019D033 /* Cadet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

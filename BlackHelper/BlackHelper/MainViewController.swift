@@ -8,9 +8,9 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     @IBOutlet weak var loginButtonImage: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,9 +19,25 @@ class MainViewController: UIViewController {
         loginButtonImage.isUserInteractionEnabled = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if Check.login.success {
+            
+            //여기서 작업하세요.
+            
+            guard let homeViewVC = self.storyboard?.instantiateViewController(withIdentifier: "TapBar") else { return }
+            homeViewVC.modalPresentationStyle = .fullScreen
+            present(homeViewVC, animated: true, completion: nil)
+            let HomeView = HomeViewController()
+            if let storyboard = self.navigationController {
+                storyboard.pushViewController(HomeView, animated: true)
+            }
+        }
+    }
+    
     @objc func popUpLoginPage() {
         guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "WebLoginView") else { return }
+        loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true, completion: nil)
-  }
+    }
 }
 
