@@ -11,6 +11,7 @@ import SwiftyJSON
 let baseURL = "https://api.intra.42.fr/v2/"
 var me: CadetProfile?
 var token:String?
+
 class MainViewController: UIViewController {
     
     @IBOutlet weak var loginButtonImage: UIImageView!
@@ -25,14 +26,10 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if Check.login.success {
-            
-            //여기서 작업하세요.
-            
             while (token == nil){}
             setupAPIData()
-            
-            
-            guard let homeViewVC = self.storyboard?.instantiateViewController(withIdentifier: "TapBar") else { return }
+
+            guard let homeViewVC = self.storyboard?.instantiateViewController(withIdentifier: View.tapBar.rawValue) else { return }
             homeViewVC.modalPresentationStyle = .fullScreen
             present(homeViewVC, animated: true, completion: nil)
             let HomeView = HomeViewController()
@@ -43,7 +40,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func popUpLoginPage() {
-        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "WebLoginView") else { return }
+        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: View.webLogin.rawValue) else { return }
         loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true, completion: nil)
     }
@@ -110,10 +107,7 @@ func processOAuthResponse(_ url: URL) {
             else {
                 return
             }
-            
             token = accessToken
-            
-            
         }
     }.resume()
     
