@@ -24,4 +24,8 @@ class PeerViewController: UIViewController {
         chatVC.modalPresentationStyle = .fullScreen
         present(chatVC, animated: true, completion: nil)
     }
+    
+    @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
 }

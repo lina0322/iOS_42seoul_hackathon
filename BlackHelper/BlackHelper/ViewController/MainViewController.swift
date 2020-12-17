@@ -24,9 +24,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view.addSubview(self.activityIndicator)
-        
+
         let loginButtonTabRecognizer = UITapGestureRecognizer(target: self, action:#selector(popUpLoginPage))
         loginButtonImage.addGestureRecognizer(loginButtonTabRecognizer)
         loginButtonImage.isUserInteractionEnabled = true
@@ -43,13 +43,11 @@ class MainViewController: UIViewController {
                 CadetData.me!.coalitionName = coaName
                 
             }
-            guard let homeViewVC = self.storyboard?.instantiateViewController(withIdentifier: View.tapBar.rawValue) else { return }
+           guard let homeViewVC = self.storyboard?.instantiateViewController(withIdentifier: View.tapBar.rawValue) else { return }
             homeViewVC.modalPresentationStyle = .fullScreen
             present(homeViewVC, animated: true, completion: nil)
-            let HomeView = HomeViewController()
-            if let storyboard = self.navigationController {
-                storyboard.pushViewController(HomeView, animated: true)
-            }
+        } else {
+            activityIndicator.stopAnimating()
         }
     }
     

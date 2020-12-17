@@ -55,8 +55,14 @@ class HomeViewController: UIViewController {
         coalitionLabel.text = Constants.coalition + CadetData.me!.coalitionName
     }
     
+    @IBAction func logout() {
+        CadetData.me = nil
+        Check.login.success = false
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func popUpHelperPage() {
-        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: View.helper.rawValue) else { return }
+       guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: View.helper.rawValue) else { return }
         loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true, completion: nil)
     }

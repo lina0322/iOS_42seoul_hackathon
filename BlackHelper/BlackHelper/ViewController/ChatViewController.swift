@@ -32,4 +32,7 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
         channel?.delegate = self
         channel?.send("hi")
     }
+    @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
 }
