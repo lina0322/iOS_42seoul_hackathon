@@ -94,9 +94,6 @@ class CadetProfile {
             }
             campusList.append((id, name))
         }
-        
-        // Compute achievements in prioritized thread other than main (saves loading time)
-        
         getLevelAndSkills(cursusId: cursusId)
         getProjects(cursusId: cursusId)
        

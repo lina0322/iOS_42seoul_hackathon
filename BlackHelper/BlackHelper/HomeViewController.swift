@@ -30,14 +30,12 @@ class HomeViewController: UIViewController {
     }
     
     @objc func popUpHelperPage() {
-        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "HelperView") else { return }
-        //loginVC.modalPresentationStyle = .fullScreen
+        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: View.helper.rawValue) else { return }
         present(loginVC, animated: true, completion: nil)
     }
     
     @objc func popUpPeerPage() {
-        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "PeerView") else { return }
-        //loginVC.modalPresentationStyle = .fullScreen
+        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: View.peer.rawValue) else { return }
         present(loginVC, animated: true, completion: nil)
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 
 var code: String = ""
+
 class WebLoginViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     @IBOutlet weak var LoginWebView: WKWebView!
@@ -35,19 +36,15 @@ class WebLoginViewController: UIViewController, WKUIDelegate, WKNavigationDelega
             code = String(strUrl.split(separator: "=")[1])
             done()
         }
-        else{
-            print("nope")
-        }
     }
     
     @IBAction func back() {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func done() {
+    func done() {
         Check.login.success = true
         processOAuthResponse(URL(string: "https://api.intra.42.fr/oauth/token")!)
-
         dismiss(animated: true, completion: nil)
     }
 }
