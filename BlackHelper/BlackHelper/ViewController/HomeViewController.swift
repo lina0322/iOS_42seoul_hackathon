@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var walletsLabel: UILabel!
+    @IBOutlet weak var coalitionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +35,14 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
         
         while CadetData.me == nil { }
-        
+        setUpCadetDataLabel()
+    }
+    
+    func setUpCadetDataLabel() {
         let imageURL = URL(string: CadetData.me!.imageURL)!
         do {
             let data = try Data(contentsOf: imageURL)
-            profileImage.image = UIImage(data: data)!.af_imageRoundedIntoCircle()
+            profileImage.image = UIImage(data: data)!.af.imageRoundedIntoCircle()
         } catch { }
 
         idLabel.text = CadetData.me!.username
@@ -46,6 +51,8 @@ class HomeViewController: UIViewController {
         if let background = UIImage(named: Coalition.init(rawValue: CadetData.me!.coalitionName)!.cover) {
             backgroundView.backgroundColor = UIColor(patternImage: background)
         }
+        walletsLabel.text = Constants.wallet + String(CadetData.me!.wallets)
+        coalitionLabel.text = Constants.coalition + CadetData.me!.coalitionName
     }
     
     @objc func popUpHelperPage() {
