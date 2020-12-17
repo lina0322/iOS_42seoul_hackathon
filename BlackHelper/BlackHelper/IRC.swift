@@ -88,7 +88,6 @@ public class IRCServer {
             guard let data = data, let message = String(data: data, encoding: .utf8) else {
                 return
             }
-            
             for line in message.split(separator: "\r\n") {
                 self.processLine(String(line))
             }
