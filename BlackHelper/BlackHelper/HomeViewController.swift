@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var helperImageButton: UIImageView!
     @IBOutlet weak var peerImageButton: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,17 @@ class HomeViewController: UIViewController {
         let peerButtonTabRecognizer = UITapGestureRecognizer(target: self, action:#selector(popUpPeerPage))
         peerImageButton.addGestureRecognizer(peerButtonTabRecognizer)
         peerImageButton.isUserInteractionEnabled = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        let imageURL = URL(string: CadetData.me!.imageURL)!
+        do {
+            let data = try Data(contentsOf: imageURL)
+            profileImage.image = UIImage(data: data)
+        } catch { }
+
         if let background = UIImage(named: Coalition.init(rawValue: "lee")!.cover) {
             backgroundView.backgroundColor = UIColor(patternImage: background)
         }
@@ -31,11 +42,13 @@ class HomeViewController: UIViewController {
     
     @objc func popUpHelperPage() {
         guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: View.helper.rawValue) else { return }
+        loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true, completion: nil)
     }
     
     @objc func popUpPeerPage() {
         guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: View.peer.rawValue) else { return }
+        loginVC.modalPresentationStyle = .fullScreen
         present(loginVC, animated: true, completion: nil)
     }
 }

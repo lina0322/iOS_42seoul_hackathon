@@ -176,6 +176,7 @@
                         <outlet property="backgroundView" destination="pVG-mp-h8O" id="AZN-EE-GnK"/>
                         <outlet property="helperImageButton" destination="NjS-dB-Z4d" id="WtB-p0-ehE"/>
                         <outlet property="peerImageButton" destination="PAE-6G-ynY" id="pgn-eH-9WG"/>
+                        <outlet property="profileImage" destination="PRC-uk-NDw" id="pDE-2l-9lM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pc3-f6-5Uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -204,20 +205,38 @@
                                     <segue destination="IxC-5j-MzE" kind="show" id="axY-WY-FN2"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8DW-cm-oGu" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="198"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SUBJECT SELECT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kd-RF-WuU">
+                                        <rect key="frame" x="0.0" y="135" width="354" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5C4-3z-XqZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5C4-3z-XqZ" firstAttribute="trailing" secondItem="8DW-cm-oGu" secondAttribute="trailing" id="2ok-qq-qik"/>
+                            <constraint firstItem="8DW-cm-oGu" firstAttribute="top" secondItem="5C4-3z-XqZ" secondAttribute="top" id="ARE-PS-bJi"/>
                             <constraint firstItem="1A9-Ng-ThL" firstAttribute="centerX" secondItem="2Ze-Qf-f6t" secondAttribute="centerX" id="BHQ-CU-wqY"/>
                             <constraint firstItem="5C4-3z-XqZ" firstAttribute="bottom" secondItem="8U9-6j-DJw" secondAttribute="bottom" constant="50" id="CEO-k1-WmQ"/>
                             <constraint firstItem="8U9-6j-DJw" firstAttribute="centerX" secondItem="2Ze-Qf-f6t" secondAttribute="centerX" id="Qs8-Cm-O4g"/>
+                            <constraint firstItem="8DW-cm-oGu" firstAttribute="leading" secondItem="5C4-3z-XqZ" secondAttribute="leading" id="cb4-7L-U11"/>
                             <constraint firstItem="1A9-Ng-ThL" firstAttribute="centerY" secondItem="2Ze-Qf-f6t" secondAttribute="centerY" id="u53-cx-B4s"/>
+                            <constraint firstAttribute="bottom" secondItem="8DW-cm-oGu" secondAttribute="bottom" constant="1238" id="ukx-nt-i7K"/>
+                            <constraint firstItem="8DW-cm-oGu" firstAttribute="top" secondItem="2Ze-Qf-f6t" secondAttribute="top" id="upV-Kx-VHT"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W37-Oe-Cdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2967" y="-560"/>
+            <point key="canvasLocation" x="2966.6015625" y="-560.02928257686676"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BbJ-l7-Zz1">
@@ -413,7 +432,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rhX-at-d9U"/>
+        <segue reference="axY-WY-FN2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="HELPER button" width="484" height="372"/>
@@ -430,6 +449,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
