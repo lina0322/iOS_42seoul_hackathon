@@ -35,6 +35,8 @@ struct Constants {
     static let emptyString = ""
     static let me = "me"
     static let level = "Level : "
+    static let wallet = "Wallet : $"
+    static let coalition = "Coalition : "
 }
 
 class Check {

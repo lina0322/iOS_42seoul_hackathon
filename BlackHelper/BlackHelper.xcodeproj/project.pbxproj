@@ -145,15 +145,15 @@
 		4CF364192588A96300E60F6F /* BlackHelper */ = {
 			isa = PBXGroup;
 			children = (
-				4C569C61258B77F80040C705 /* ViewController */,
 				4CF3641A2588A96300E60F6F /* AppDelegate.swift */,
 				4CF3641C2588A96300E60F6F /* SceneDelegate.swift */,
+				4C569C61258B77F80040C705 /* ViewController */,
 				4C69D318258A30320019D033 /* Cadet.swift */,
 				4C69D339258A4B720019D033 /* Project.swift */,
 				4C69D378258B0D8F0019D033 /* Constants.swift */,
 				4CF364202588A96300E60F6F /* Main.storyboard */,
-				4CF364232588A96400E60F6F /* Assets.xcassets */,
 				4CF364252588A96400E60F6F /* LaunchScreen.storyboard */,
+				4CF364232588A96400E60F6F /* Assets.xcassets */,
 				4CF364282588A96400E60F6F /* Info.plist */,
 			);
 			path = BlackHelper;

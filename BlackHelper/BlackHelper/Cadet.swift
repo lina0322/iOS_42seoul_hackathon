@@ -174,5 +174,4 @@ class CadetProfile {
         }
         return piscineDays
     }
-    
 }
