@@ -12,8 +12,20 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var loginButtonImage: UIImageView!
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 2000, height: 2000)
+            activityIndicator.center = self.view.center
+            activityIndicator.color = UIColor.red
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = UIActivityIndicatorView.Style.white
+            activityIndicator.stopAnimating()
+            return activityIndicator }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addSubview(self.activityIndicator)
         
         let loginButtonTabRecognizer = UITapGestureRecognizer(target: self, action:#selector(popUpLoginPage))
         loginButtonImage.addGestureRecognizer(loginButtonTabRecognizer)
@@ -22,7 +34,9 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if Check.login.success {
-            while (Constants.token == Constants.emptyString){}
+            while (Constants.token == Constants.emptyString){
+                activityIndicator.startAnimating()
+            }
             setupAPIData()
             while (CadetData.me == nil) {}
             getCoalitionInfo(forUserId: CadetData.me!.userId){coaName in
@@ -48,7 +62,6 @@ class MainViewController: UIViewController {
     func setupAPIData() {
         request(url: Constants.baseURL + Constants.me) { (responseJSON) in
             guard let data = responseJSON else { return }
-            print(data)
             CadetData.me = CadetProfile(data: data)
             
         }
@@ -91,7 +104,6 @@ class MainViewController: UIViewController {
                     
                     return
                 }
-                print(valueJSON)
                 completionHandler(valueJSON)
             }
         }.resume()
