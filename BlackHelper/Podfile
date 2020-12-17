@@ -8,6 +8,7 @@ target 'BlackHelper' do
 	pod 'AeroGearOAuth2'
  	pod 'SwiftyJSON'
 	pod 'SVGKit'
+  pod 'AlamofireImage'
   # Pods for BlackHelper
 
   target 'BlackHelperTests' do

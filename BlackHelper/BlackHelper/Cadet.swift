@@ -12,7 +12,7 @@ import SVGKit
 
 typealias Cadet = (id: Int, login: String)
 
-class CadetData {
+struct CadetData {
     static var me: CadetProfile?
 }
 
@@ -30,6 +30,8 @@ class CadetProfile {
     var wallets: Int
     var correctionPoints: Int
     var level: Double = 0
+    
+    var coalitionName: String = ""
     
     var piscineMonth: String
     var piscineYear: String
@@ -172,4 +174,5 @@ class CadetProfile {
         }
         return piscineDays
     }
+    
 }

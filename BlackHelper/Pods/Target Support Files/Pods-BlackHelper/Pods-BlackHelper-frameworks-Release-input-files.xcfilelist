@@ -1,6 +1,8 @@
 ${PODS_ROOT}/Target Support Files/Pods-BlackHelper/Pods-BlackHelper-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AeroGearHttp/AeroGearHttp.framework
 ${BUILT_PRODUCTS_DIR}/AeroGearOAuth2/AeroGearOAuth2.framework
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework
 ${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
 ${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
