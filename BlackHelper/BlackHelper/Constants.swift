@@ -34,6 +34,7 @@ struct Constants {
     static let baseURL = "https://api.intra.42.fr/v2/"
     static let emptyString = ""
     static let me = "me"
+    static let level = "Level : "
 }
 
 class Check {

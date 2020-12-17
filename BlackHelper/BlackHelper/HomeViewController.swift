@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var helperImageButton: UIImageView!
     @IBOutlet weak var peerImageButton: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +28,22 @@ class HomeViewController: UIViewController {
         peerImageButton.isUserInteractionEnabled = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        while CadetData.me == nil { }
         
         let imageURL = URL(string: CadetData.me!.imageURL)!
         do {
             let data = try Data(contentsOf: imageURL)
             profileImage.image = UIImage(data: data)
         } catch { }
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
+        self.profileImage.clipsToBounds = true
 
+        idLabel.text = CadetData.me!.username
+        levelLabel.text = Constants.level + String(CadetData.me!.level)
+        
         if let background = UIImage(named: Coalition.init(rawValue: "lee")!.cover) {
             backgroundView.backgroundColor = UIColor(patternImage: background)
         }

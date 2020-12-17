@@ -12,7 +12,7 @@ import SVGKit
 
 typealias Cadet = (id: Int, login: String)
 
-class CadetData {
+struct CadetData {
     static var me: CadetProfile?
 }
 

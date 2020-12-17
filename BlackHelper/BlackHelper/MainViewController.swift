@@ -12,8 +12,23 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var loginButtonImage: UIImageView!
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+            // Create an indicator.
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 2000, height: 2000)
+            activityIndicator.center = self.view.center
+            activityIndicator.color = UIColor.red
+            // Also show the indicator even when the animation is stopped.
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = UIActivityIndicatorView.Style.white
+            // Start animation.
+            activityIndicator.stopAnimating()
+            return activityIndicator }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addSubview(self.activityIndicator)
         
         let loginButtonTabRecognizer = UITapGestureRecognizer(target: self, action:#selector(popUpLoginPage))
         loginButtonImage.addGestureRecognizer(loginButtonTabRecognizer)
@@ -22,7 +37,9 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if Check.login.success {
-            while (Constants.token == Constants.emptyString){}
+            while (Constants.token == Constants.emptyString){
+                activityIndicator.startAnimating()
+            }
             setupAPIData()
             
             guard let homeViewVC = self.storyboard?.instantiateViewController(withIdentifier: View.tapBar.rawValue) else { return }
