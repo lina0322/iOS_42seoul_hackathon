@@ -10,26 +10,34 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var helperImageButton: UIImageView!
+    @IBOutlet weak var peerImageButton: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let helperButtonTabRecognizer = UITapGestureRecognizer(target: self, action:#selector(popUpHelperPage))
+        helperImageButton.addGestureRecognizer(helperButtonTabRecognizer)
+        helperImageButton.isUserInteractionEnabled = true
+        
+        let peerButtonTabRecognizer = UITapGestureRecognizer(target: self, action:#selector(popUpPeerPage))
+        peerImageButton.addGestureRecognizer(peerButtonTabRecognizer)
+        peerImageButton.isUserInteractionEnabled = true
+        
         if let background = UIImage(named: Coalition.init(rawValue: "lee")!.cover) {
             backgroundView.backgroundColor = UIColor(patternImage: background)
         }
-        
-       
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func popUpHelperPage() {
+        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "HelperView") else { return }
+        //loginVC.modalPresentationStyle = .fullScreen
+        present(loginVC, animated: true, completion: nil)
     }
-    */
-
+    
+    @objc func popUpPeerPage() {
+        guard let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "PeerView") else { return }
+        //loginVC.modalPresentationStyle = .fullScreen
+        present(loginVC, animated: true, completion: nil)
+    }
 }

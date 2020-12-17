@@ -50,6 +50,4 @@ class WebLoginViewController: UIViewController, WKUIDelegate, WKNavigationDelega
 
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }
