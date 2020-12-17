@@ -21,13 +21,6 @@
                                 <rect key="frame" x="205" y="898" width="614" height="127"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV3-P4-wgZ">
-                                <rect key="frame" x="958" y="1296" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="tz8-6C-Vq7" kind="show" id="9l2-6y-SpJ"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="MuQ-77-fjx">
                                 <rect key="frame" x="128" y="446" width="768" height="319"/>
                             </imageView>
@@ -35,9 +28,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hV3-P4-wgZ" secondAttribute="trailing" constant="20" id="DUn-C5-wcy"/>
                             <constraint firstItem="MuQ-77-fjx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.9" id="JhE-QX-0iD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hV3-P4-wgZ" secondAttribute="bottom" constant="20" id="Jqp-ur-elt"/>
                             <constraint firstItem="Nn9-pW-mAE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LO8-Yv-qV9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="Nn9-pW-mAE" secondAttribute="centerY" multiplier="0.7" id="UPX-fd-laP"/>
                             <constraint firstItem="MuQ-77-fjx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="exM-dM-aTt"/>

@@ -8,14 +8,14 @@
 import Foundation
 
 enum Coalition: String {
-    case gun = "gun"
-    case gon = "gon"
-    case gam = "gam"
-    case lee = "lee"
+    case gun = "Gun"
+    case gon = "Gon"
+    case gam = "Gam"
+    case lee = "Lee"
     
     var cover: String {
         let cover = "_cover"
-        return self.rawValue + cover
+        return self.rawValue.lowercased() + cover
     }
 }
 

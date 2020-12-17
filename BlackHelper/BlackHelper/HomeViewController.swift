@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class HomeViewController: UIViewController {
 
@@ -36,15 +37,13 @@ class HomeViewController: UIViewController {
         let imageURL = URL(string: CadetData.me!.imageURL)!
         do {
             let data = try Data(contentsOf: imageURL)
-            profileImage.image = UIImage(data: data)
+            profileImage.image = UIImage(data: data)!.af_imageRoundedIntoCircle()
         } catch { }
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
-        self.profileImage.clipsToBounds = true
 
         idLabel.text = CadetData.me!.username
         levelLabel.text = Constants.level + String(CadetData.me!.level)
         
-        if let background = UIImage(named: Coalition.init(rawValue: "lee")!.cover) {
+        if let background = UIImage(named: Coalition.init(rawValue: CadetData.me!.coalitionName)!.cover) {
             backgroundView.backgroundColor = UIColor(patternImage: background)
         }
     }
@@ -61,3 +60,4 @@ class HomeViewController: UIViewController {
         present(loginVC, animated: true, completion: nil)
     }
 }
+

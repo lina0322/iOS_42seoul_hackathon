@@ -33,7 +33,6 @@ class CadetProfile {
     
     var coalitionName: String = ""
     
-    
     var piscineMonth: String
     var piscineYear: String
     

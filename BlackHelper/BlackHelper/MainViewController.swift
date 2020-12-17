@@ -13,15 +13,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var loginButtonImage: UIImageView!
     
     lazy var activityIndicator: UIActivityIndicatorView = {
-            // Create an indicator.
             let activityIndicator = UIActivityIndicatorView()
             activityIndicator.frame = CGRect(x: 0, y: 0, width: 2000, height: 2000)
             activityIndicator.center = self.view.center
             activityIndicator.color = UIColor.red
-            // Also show the indicator even when the animation is stopped.
             activityIndicator.hidesWhenStopped = true
             activityIndicator.style = UIActivityIndicatorView.Style.white
-            // Start animation.
             activityIndicator.stopAnimating()
             return activityIndicator }()
     
@@ -65,7 +62,6 @@ class MainViewController: UIViewController {
     func setupAPIData() {
         request(url: Constants.baseURL + Constants.me) { (responseJSON) in
             guard let data = responseJSON else { return }
-            print(data)
             CadetData.me = CadetProfile(data: data)
             
         }
@@ -108,7 +104,6 @@ class MainViewController: UIViewController {
                     
                     return
                 }
-                print(valueJSON)
                 completionHandler(valueJSON)
             }
         }.resume()
