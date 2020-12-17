@@ -19,6 +19,10 @@ class HelperViewController: UIViewController {
         chatButton.isUserInteractionEnabled = true
     }
     
+    @IBAction func cancel() {
+        
+    }
+    
     @objc func popUpchatPage() {
         guard let chatVC = self.storyboard?.instantiateViewController(withIdentifier: View.chat.rawValue) else { return }
         chatVC.modalPresentationStyle = .fullScreen

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpZ-Nb-qY1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpZ-Nb-qY1">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,6 +88,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3b-ZW-TwG">
                                         <rect key="frame" x="928.5" y="42" width="47.5" height="48"/>
                                         <state key="normal" image="logoutIcon"/>
+                                        <connections>
+                                            <action selector="logout" destination="i3t-nL-q4e" eventType="touchUpInside" id="e63-mK-wbw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
@@ -421,33 +424,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채팅방 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vu0-Hj-lX2">
-                                <rect key="frame" x="285" y="623" width="454" height="120"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lo8-2M-oFa" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="136.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6f-iE-wWQ">
-                                        <rect key="frame" x="51" y="48" width="42" height="41"/>
-                                        <state key="normal" image="undoIcon"/>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채 팅 방 목 록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-Pl-NwP">
-                                        <rect key="frame" x="144.5" y="48" width="177" height="41"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <color key="textColor" red="0.91764705879999997" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="aqQ-Pl-NwP" firstAttribute="centerY" secondItem="Lo8-2M-oFa" secondAttribute="centerY" id="AZX-02-04s"/>
-                                    <constraint firstItem="n6f-iE-wWQ" firstAttribute="leading" secondItem="Lo8-2M-oFa" secondAttribute="centerX" multiplier="0.1" id="QpP-A8-qGt"/>
-                                    <constraint firstItem="aqQ-Pl-NwP" firstAttribute="leading" secondItem="n6f-iE-wWQ" secondAttribute="centerX" multiplier="2" id="gID-34-OOx"/>
-                                    <constraint firstItem="n6f-iE-wWQ" firstAttribute="centerY" secondItem="Lo8-2M-oFa" secondAttribute="centerY" id="hqL-nG-WAu"/>
-                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8A-xD-6pU" userLabel="bottom View">
                                 <rect key="frame" x="0.0" y="136.5" width="1024" height="1229.5"/>
@@ -465,20 +444,19 @@
                             <constraint firstItem="Lo8-2M-oFa" firstAttribute="leading" secondItem="E2E-BH-fxm" secondAttribute="leading" id="jna-8p-RFT"/>
                             <constraint firstAttribute="bottom" secondItem="X8A-xD-6pU" secondAttribute="bottom" id="mYB-sd-hj6"/>
                             <constraint firstItem="X8A-xD-6pU" firstAttribute="height" secondItem="E2E-BH-fxm" secondAttribute="height" multiplier="0.9" id="qlH-pn-h7B"/>
-                            <constraint firstItem="vu0-Hj-lX2" firstAttribute="centerY" secondItem="E2E-BH-fxm" secondAttribute="centerY" id="uRx-by-q1I"/>
-                            <constraint firstItem="vu0-Hj-lX2" firstAttribute="centerX" secondItem="E2E-BH-fxm" secondAttribute="centerX" id="ygl-gt-dCf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" image="bubble.left.and.bubble.right.fill" catalog="system" id="fIf-Lb-ZvF"/>
+                    <navigationItem key="navigationItem" id="iOX-kL-0pE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2R-md-Dav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2228.90625" y="437.92093704245968"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="2ue-bz-v8N">
             <objects>
-                <viewController storyboardIdentifier="ChatView" id="IxC-5j-MzE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatView" id="IxC-5j-MzE" customClass="ChatViewController" customModule="BlackHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Wo-le-JyF">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
