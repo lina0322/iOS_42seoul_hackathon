@@ -85,6 +85,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3b-ZW-TwG">
+                                        <rect key="frame" x="928.5" y="42" width="47.5" height="48"/>
+                                        <state key="normal" image="logoutIcon"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -93,6 +97,8 @@
                                     <constraint firstItem="VEu-mN-0CA" firstAttribute="leading" secondItem="97e-Ms-Vty" secondAttribute="leading" multiplier="0.7" id="8Ks-Xu-RIG"/>
                                     <constraint firstItem="dD9-Ke-yo3" firstAttribute="width" secondItem="pVG-mp-h8O" secondAttribute="width" multiplier="0.14" id="Nsp-HG-qCd"/>
                                     <constraint firstItem="VEu-mN-0CA" firstAttribute="top" secondItem="97e-Ms-Vty" secondAttribute="bottom" constant="-30" id="OoI-h0-dHP"/>
+                                    <constraint firstItem="q3b-ZW-TwG" firstAttribute="top" secondItem="pVG-mp-h8O" secondAttribute="top" constant="42" id="RYO-5a-3kk"/>
+                                    <constraint firstAttribute="trailing" secondItem="q3b-ZW-TwG" secondAttribute="trailing" constant="48" id="bRy-cp-pcd"/>
                                     <constraint firstItem="VEu-mN-0CA" firstAttribute="top" secondItem="pVG-mp-h8O" secondAttribute="centerY" multiplier="1.6" id="mij-EP-1xj"/>
                                     <constraint firstItem="gDZ-JF-ZdX" firstAttribute="trailing" secondItem="VEu-mN-0CA" secondAttribute="trailing" multiplier="0.93" id="n3w-AJ-YOq"/>
                                     <constraint firstItem="dD9-Ke-yo3" firstAttribute="leading" secondItem="pVG-mp-h8O" secondAttribute="centerX" multiplier="0.1" id="t9E-Fe-lQI"/>
@@ -632,6 +638,7 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="intra login button" width="628" height="127"/>
         <image name="lee_mark" width="139" height="242.5"/>
+        <image name="logoutIcon" width="47.5" height="48"/>
         <image name="matchingButton" width="484" height="260"/>
         <image name="status bar" width="817" height="145"/>
         <image name="title" width="762" height="319"/>
