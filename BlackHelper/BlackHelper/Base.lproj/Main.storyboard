@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpZ-Nb-qY1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpZ-Nb-qY1">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -142,11 +142,67 @@
                     <navigationItem key="navigationItem" id="kpk-jQ-WlD"/>
                     <connections>
                         <outlet property="backgroundView" destination="pVG-mp-h8O" id="AZN-EE-GnK"/>
+                        <outlet property="helperImageButton" destination="NjS-dB-Z4d" id="WtB-p0-ehE"/>
+                        <outlet property="peerImageButton" destination="PAE-6G-ynY" id="pgn-eH-9WG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pc3-f6-5Uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2228.90625" y="-560.02928257686676"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O3k-CL-oeU">
+            <objects>
+                <viewController storyboardIdentifier="HelperView" id="vzb-dc-lNc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Ze-Qf-f6t">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="헬퍼 서브젝트 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-Ng-ThL">
+                                <rect key="frame" x="145" y="623" width="734" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5C4-3z-XqZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1A9-Ng-ThL" firstAttribute="centerX" secondItem="2Ze-Qf-f6t" secondAttribute="centerX" id="BHQ-CU-wqY"/>
+                            <constraint firstItem="1A9-Ng-ThL" firstAttribute="centerY" secondItem="2Ze-Qf-f6t" secondAttribute="centerY" id="u53-cx-B4s"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W37-Oe-Cdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3049" y="-890"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BbJ-l7-Zz1">
+            <objects>
+                <viewController storyboardIdentifier="PeerView" id="LJw-5Y-bhJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4XU-vX-xND">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="피어 서브젝트 입장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCc-dv-0uU">
+                                <rect key="frame" x="145" y="623" width="734" height="120"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G8S-H5-cZg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mCc-dv-0uU" firstAttribute="centerX" secondItem="4XU-vX-xND" secondAttribute="centerX" id="FQW-EU-92R"/>
+                            <constraint firstItem="mCc-dv-0uU" firstAttribute="centerY" secondItem="4XU-vX-xND" secondAttribute="centerY" id="K1w-IO-bQJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1KT-Di-jPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3049" y="-217"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gXk-MS-O6W">
