@@ -12,8 +12,11 @@ import SVGKit
 
 typealias Cadet = (id: Int, login: String)
 
+class CadetData {
+    static var me: CadetProfile?
+}
+
 class CadetProfile {
-    
     var cursusUsers: [JSON]
     var projectsUsers: [JSON]
     

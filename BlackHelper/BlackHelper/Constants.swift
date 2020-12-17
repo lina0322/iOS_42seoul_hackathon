@@ -29,5 +29,14 @@ enum View: String {
 }
 
 struct Constants {
-    
+    static var token:String = ""
+    static let baseURL = "https://api.intra.42.fr/v2/"
+    static let emptyString = ""
+    static let me = "me"
+}
+
+class Check {
+    static var login = Check()
+    var success: Bool = false
+    private init() {}
 }
