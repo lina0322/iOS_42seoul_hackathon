@@ -218,6 +218,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44D-Pe-WYU">
                                         <rect key="frame" x="51" y="84.5" width="42" height="41"/>
                                         <state key="normal" image="undoIcon"/>
+                                        <connections>
+                                            <action selector="cancel" destination="vzb-dc-lNc" eventType="touchUpInside" id="bdk-at-lvm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
@@ -358,6 +361,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ii7-6o-YdS">
                                         <rect key="frame" x="51" y="84.5" width="42" height="41"/>
                                         <state key="normal" image="undoIcon"/>
+                                        <connections>
+                                            <action selector="cancel" destination="LJw-5Y-bhJ" eventType="touchUpInside" id="P1j-tf-1lc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
@@ -416,10 +422,10 @@
             </objects>
             <point key="canvasLocation" x="2966.6015625" y="103.66032210834553"/>
         </scene>
-        <!--View Controller-->
+        <!--List View Controller-->
         <scene sceneID="gXk-MS-O6W">
             <objects>
-                <viewController id="PWm-rC-m9s" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListView" id="PWm-rC-m9s" customClass="ListViewController" customModule="BlackHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E2E-BH-fxm">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -430,7 +436,21 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8A-xD-6pU" userLabel="bottom View">
                                 <rect key="frame" x="0.0" y="136.5" width="1024" height="1229.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXs-xR-T79">
+                                        <rect key="frame" x="295.5" y="549" width="433" height="132"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                        <state key="normal" title="채팅방입장"/>
+                                        <connections>
+                                            <action selector="goChatView" destination="PWm-rC-m9s" eventType="touchUpInside" id="KzL-Po-7Vs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="YXs-xR-T79" firstAttribute="centerY" secondItem="X8A-xD-6pU" secondAttribute="centerY" id="7FJ-Iw-7Yk"/>
+                                    <constraint firstItem="YXs-xR-T79" firstAttribute="centerX" secondItem="X8A-xD-6pU" secondAttribute="centerX" id="ewt-YF-T3R"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jfs-6c-p4j"/>
@@ -473,6 +493,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrG-4w-v7i">
                                         <rect key="frame" x="51" y="48" width="42" height="41"/>
                                         <state key="normal" image="undoIcon"/>
+                                        <connections>
+                                            <action selector="cancel" destination="IxC-5j-MzE" eventType="touchUpInside" id="y5r-qg-nMo"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HELPER 아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG9-DV-NSx">
                                         <rect key="frame" x="144.5" y="48" width="218" height="41"/>
@@ -505,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4V3-fv-09e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3690" y="-275"/>
+            <point key="canvasLocation" x="3689.6484374999995" y="-275.40263543191799"/>
         </scene>
         <!--Web Login View Controller-->
         <scene sceneID="WWm-aM-eH8">
