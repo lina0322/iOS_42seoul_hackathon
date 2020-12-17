@@ -176,6 +176,7 @@
                         <outlet property="backgroundView" destination="pVG-mp-h8O" id="AZN-EE-GnK"/>
                         <outlet property="helperImageButton" destination="NjS-dB-Z4d" id="WtB-p0-ehE"/>
                         <outlet property="peerImageButton" destination="PAE-6G-ynY" id="pgn-eH-9WG"/>
+                        <outlet property="profileImage" destination="PRC-uk-NDw" id="pDE-2l-9lM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pc3-f6-5Uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

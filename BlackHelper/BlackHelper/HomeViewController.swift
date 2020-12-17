@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var helperImageButton: UIImageView!
     @IBOutlet weak var peerImageButton: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,17 @@ class HomeViewController: UIViewController {
         let peerButtonTabRecognizer = UITapGestureRecognizer(target: self, action:#selector(popUpPeerPage))
         peerImageButton.addGestureRecognizer(peerButtonTabRecognizer)
         peerImageButton.isUserInteractionEnabled = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        let imageURL = URL(string: CadetData.me!.imageURL)!
+        do {
+            let data = try Data(contentsOf: imageURL)
+            profileImage.image = UIImage(data: data)
+        } catch { }
+
         if let background = UIImage(named: Coalition.init(rawValue: "lee")!.cover) {
             backgroundView.backgroundColor = UIColor(patternImage: background)
         }
