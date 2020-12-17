@@ -27,7 +27,18 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
         
         channel = server?.join("Libft")
         channel?.delegate = self
-        channel?.send("hi")
+        sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        DispatchQueue.global().async {
+            while (true){
+                sleep(1)
+                self.getMessageList()
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        comments.removeAll()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,19 +47,29 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let view = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
-        view.textLabel!.text = self.comments[indexPath.row]
+        view.textLabel?.text = self.comments[indexPath.row]
         
         return view
     }
     
     func didRecieveMessage(_ server: IRCServer, message: String) {
         comments.append(message)
-        print(message)
     }
     
     func didRecieveMessage(_ channel: IRCChannel, message: String) {
         comments.append(message)
-        print("\(channel): \(message)")
+    }
+    
+    func getMessageList(){
+        self.chatTableView.reloadData()
+    }
+    
+    @objc func sendMessage() {
+        if (messageTextField.hasText) {
+            channel?.send(messageTextField.text!)
+            comments.append(messageTextField.text!)
+            messageTextField.text = ""
+        }
     }
     
     @IBAction func cancel() {
