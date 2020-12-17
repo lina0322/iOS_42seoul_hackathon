@@ -27,7 +27,8 @@ class MainViewController: UIViewController {
         if Check.login.success {
             
             //여기서 작업하세요.
-            processOAuthResponse(URL(string: "https://api.intra.42.fr/oauth/token")!)
+            
+            while (token == nil){}
             setupAPIData()
             
             
@@ -49,7 +50,7 @@ class MainViewController: UIViewController {
 }
 
 func setupAPIData() {
-    request(url: baseURL + "users/llim") { (responseJSON) in
+    request(url: baseURL + "me") { (responseJSON) in
         guard let data = responseJSON else { return }
         print(data)
         me = CadetProfile(data: data)
@@ -65,62 +66,57 @@ func request(url: String, cachePolicy: URLRequest.CachePolicy = .useProtocolCach
     var request = URLRequest(url: realURL!)
     request.cachePolicy = cachePolicy
     request.httpMethod = "GET"
-    request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-    
+    request.addValue("Bearer \(token!)", forHTTPHeaderField: "Authorization")
     URLSession.shared.dataTask(with: request) { (data, response, error) in
-        DispatchQueue.main.async {
+        DispatchQueue.global().async {
             
             guard let data = data, let valueJSON = try? JSON(data: data) else {
                 print("Request Error: Couldn't get data after request...")
                 print(response ?? "NO RESPONSE")
                 
                 return
-                
             }
+            print(valueJSON)
             completionHandler(valueJSON)
         }
     }.resume()
 }
 
+fileprivate func generateRandomString() -> String {
+    let length = Int.random(in: 43...128)
+    let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    return String((0..<length).map { _ in letters.randomElement()! })
+}
 func processOAuthResponse(_ url: URL) {
-    guard
-        let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-        let queryItems = components.queryItems
-        else { return }
-
-    
     let tokenParams = [
         "grant_type": "authorization_code",
         "client_id": "9ed59a92caf24a4acce31ee4a08d1b1590bda83f184d5743d54f6181a6a15744",
         "client_secret": "eff51fdb4d09fcb61339cde21d2257eacd63063154aff258017197dbab7f6a37",
         "code": code,
-        "redirect_uri": "http://192.168.0.5",
-        "state": "super_long_secret_state"
+        "redirect_uri": "http://localhost",
     ]
     
-    var request = URLRequest(url: url)
-    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-    request.httpMethod = "POST"
-    request.httpBody = tokenParams.percentEscaped().data(using: .utf8)
-    
-    URLSession.shared.dataTask(with: request) { data, _, error in
-        DispatchQueue.main.async {
+    var urequest = URLRequest(url: url)
+    urequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+    urequest.httpMethod = "POST"
+    urequest.httpBody = tokenParams.percentEscaped().data(using: .utf8)
+    URLSession.shared.dataTask(with: urequest) { data, _, error in
+        DispatchQueue.global().sync {
             guard error == nil, let data = data, let valueJSON = try? JSON(data: data) else {
                 return
-                                }
-            print(valueJSON)
-            
+            }
             guard valueJSON["token_type"].string == "bearer",
-                let accessToken = valueJSON["access_token"].string,
-                let refreshToken = valueJSON["refresh_token"].string
-                else {
-                    return
+                  let accessToken = valueJSON["access_token"].string
+            else {
+                return
             }
             
             token = accessToken
             
+            
         }
     }.resume()
+    
 }
 extension Dictionary {
     func percentEscaped() -> String {
@@ -128,8 +124,8 @@ extension Dictionary {
             let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
             let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
             return escapedKey + "=" + escapedValue
-            }
-            .joined(separator: "&")
+        }
+        .joined(separator: "&")
     }
 }
 
