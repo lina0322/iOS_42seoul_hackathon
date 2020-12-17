@@ -7,21 +7,18 @@
 
 import UIKit
 
-class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,IRCChannelDelegate {
-    func didRecieveMessage(_ server: IRCServer, message: String) {
-        print(message)
-    }
+class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,IRCChannelDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    func didRecieveMessage(_ channel: IRCChannel, message: String) {
-        print("\(channel): \(message)")
-    }
+    @IBOutlet weak var chatTableView: UITableView!
+    @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     
     var server: IRCServer? = nil
     var channel: IRCChannel? = nil
+    var comments: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("어서와")
         let username = CadetData.me!.username
         let user = IRCUser(username: username, realName: username, nick: username)
         
@@ -32,6 +29,28 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
         channel?.delegate = self
         channel?.send("hi")
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let view = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
+        view.textLabel!.text = self.comments[indexPath.row]
+        
+        return view
+    }
+    
+    func didRecieveMessage(_ server: IRCServer, message: String) {
+        comments.append(message)
+        print(message)
+    }
+    
+    func didRecieveMessage(_ channel: IRCChannel, message: String) {
+        comments.append(message)
+        print("\(channel): \(message)")
+    }
+    
     @IBAction func cancel() {
         dismiss(animated: true, completion: nil)
     }
