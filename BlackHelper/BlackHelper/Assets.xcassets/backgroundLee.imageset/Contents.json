@@ -1,10 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "backgroundLee.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "backgroundLee@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "whiteUndoIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "whiteUndoIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "backgroundLee@3x.png",
+      "filename" : "whiteUndoIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
