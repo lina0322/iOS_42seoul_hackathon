@@ -60,4 +60,3 @@ class HomeViewController: UIViewController {
         present(loginVC, animated: true, completion: nil)
     }
 }
-

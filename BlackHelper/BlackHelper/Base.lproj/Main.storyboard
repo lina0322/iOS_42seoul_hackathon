@@ -176,22 +176,14 @@
             </objects>
             <point key="canvasLocation" x="2229" y="-275"/>
         </scene>
-        <!--View Controller-->
+        <!--Helper View Controller-->
         <scene sceneID="O3k-CL-oeU">
             <objects>
-                <viewController storyboardIdentifier="HelperView" id="vzb-dc-lNc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HelperView" id="vzb-dc-lNc" customClass="HelperViewController" customModule="BlackHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ze-Qf-f6t">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U9-6j-DJw">
-                                <rect key="frame" x="188.5" y="1164" width="647" height="132"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <state key="normal" title="채팅방 입장 버튼"/>
-                                <connections>
-                                    <segue destination="IxC-5j-MzE" kind="show" id="axY-WY-FN2"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8DW-cm-oGu" userLabel="Top View">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="210"/>
                                 <subviews>
@@ -204,17 +196,9 @@
                                         <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="헬퍼 서브젝트 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1A9-Ng-ThL">
-                                        <rect key="frame" x="145.5" y="45.5" width="733.5" height="119.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
-                                    <constraint firstItem="1A9-Ng-ThL" firstAttribute="centerY" secondItem="8DW-cm-oGu" secondAttribute="centerY" id="51O-O3-XBp"/>
-                                    <constraint firstItem="1A9-Ng-ThL" firstAttribute="centerX" secondItem="8DW-cm-oGu" secondAttribute="centerX" id="Efh-3I-F9D"/>
                                     <constraint firstItem="4Kd-RF-WuU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8DW-cm-oGu" secondAttribute="leading" constant="20" symbolic="YES" id="WUc-eV-AFg"/>
                                     <constraint firstAttribute="trailing" secondItem="4Kd-RF-WuU" secondAttribute="trailing" constant="732" id="fMg-kB-yPv"/>
                                     <constraint firstAttribute="bottom" secondItem="4Kd-RF-WuU" secondAttribute="bottom" id="it3-ky-wfU"/>
@@ -301,13 +285,11 @@
                             <constraint firstItem="cmj-AS-G5d" firstAttribute="width" secondItem="2Ze-Qf-f6t" secondAttribute="width" multiplier="0.47" id="0hY-Tx-j4p"/>
                             <constraint firstItem="5C4-3z-XqZ" firstAttribute="trailing" secondItem="8DW-cm-oGu" secondAttribute="trailing" id="2ok-qq-qik"/>
                             <constraint firstItem="5pb-K5-3cm" firstAttribute="width" secondItem="2Ze-Qf-f6t" secondAttribute="width" multiplier="0.75" id="5eF-F7-edt"/>
-                            <constraint firstItem="5C4-3z-XqZ" firstAttribute="bottom" secondItem="8U9-6j-DJw" secondAttribute="bottom" constant="50" id="CEO-k1-WmQ"/>
                             <constraint firstItem="5pb-K5-3cm" firstAttribute="top" secondItem="6zt-ue-j4w" secondAttribute="bottom" constant="51.5" id="G1m-7o-egH"/>
                             <constraint firstItem="8DW-cm-oGu" firstAttribute="centerX" secondItem="cmj-AS-G5d" secondAttribute="centerX" id="G9e-Gt-6gR"/>
                             <constraint firstItem="5pb-K5-3cm" firstAttribute="centerX" secondItem="2Ze-Qf-f6t" secondAttribute="centerX" id="IjN-GR-PfP"/>
                             <constraint firstItem="6zt-ue-j4w" firstAttribute="leading" secondItem="5C4-3z-XqZ" secondAttribute="centerX" multiplier="0.15" id="JPW-tQ-fa4"/>
                             <constraint firstItem="5C4-3z-XqZ" firstAttribute="bottom" secondItem="cmj-AS-G5d" secondAttribute="bottom" constant="9" id="Qqr-tC-6QM"/>
-                            <constraint firstItem="8U9-6j-DJw" firstAttribute="centerX" secondItem="2Ze-Qf-f6t" secondAttribute="centerX" id="Qs8-Cm-O4g"/>
                             <constraint firstItem="cmj-AS-G5d" firstAttribute="centerX" secondItem="2Ze-Qf-f6t" secondAttribute="centerX" id="Zm1-PR-Rb3"/>
                             <constraint firstItem="8DW-cm-oGu" firstAttribute="leading" secondItem="5C4-3z-XqZ" secondAttribute="leading" id="cb4-7L-U11"/>
                             <constraint firstItem="6zt-ue-j4w" firstAttribute="top" secondItem="8DW-cm-oGu" secondAttribute="bottom" multiplier="1.1" id="gpQ-tT-9B3"/>
@@ -317,43 +299,33 @@
                             <constraint firstItem="8DW-cm-oGu" firstAttribute="top" secondItem="2Ze-Qf-f6t" secondAttribute="top" id="upV-Kx-VHT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chatButton" destination="cmj-AS-G5d" id="2fb-Ax-jvL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W37-Oe-Cdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2966.6015625" y="-560.02928257686676"/>
         </scene>
-        <!--View Controller-->
+        <!--Peer View Controller-->
         <scene sceneID="BbJ-l7-Zz1">
             <objects>
-                <viewController storyboardIdentifier="PeerView" id="LJw-5Y-bhJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PeerView" id="LJw-5Y-bhJ" customClass="PeerViewController" customModule="BlackHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4XU-vX-xND">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="피어 서브젝트 입장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCc-dv-0uU">
-                                <rect key="frame" x="145" y="623" width="734" height="120"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My4-8L-OSe">
-                                <rect key="frame" x="188.5" y="1164" width="647" height="132"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <state key="normal" title="채팅방 입장 버튼"/>
-                                <connections>
-                                    <segue destination="IxC-5j-MzE" kind="show" id="rhX-at-d9U"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="matchingButton" translatesAutoresizingMaskIntoConstraints="NO" id="W3y-pW-NPz">
+                                <rect key="frame" x="272" y="1046" width="481" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G8S-H5-cZg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="G8S-H5-cZg" firstAttribute="bottom" secondItem="My4-8L-OSe" secondAttribute="bottom" constant="50" id="4qq-9S-SZa"/>
-                            <constraint firstItem="mCc-dv-0uU" firstAttribute="centerX" secondItem="4XU-vX-xND" secondAttribute="centerX" id="FQW-EU-92R"/>
-                            <constraint firstItem="mCc-dv-0uU" firstAttribute="centerY" secondItem="4XU-vX-xND" secondAttribute="centerY" id="K1w-IO-bQJ"/>
-                            <constraint firstItem="My4-8L-OSe" firstAttribute="centerX" secondItem="4XU-vX-xND" secondAttribute="centerX" id="h7b-OU-7gI"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chatButton" destination="W3y-pW-NPz" id="mIf-Kv-Owj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KT-Di-jPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -392,11 +364,11 @@
             <objects>
                 <viewController storyboardIdentifier="ChatView" id="IxC-5j-MzE" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Wo-le-JyF">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채팅방" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7d-GP-V0z">
-                                <rect key="frame" x="222" y="438" width="260" height="120"/>
+                                <rect key="frame" x="382" y="623" width="260" height="120"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -515,9 +487,6 @@
             <point key="canvasLocation" x="1504.6875" y="103.66032210834553"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="axY-WY-FN2"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="HELPER button" width="484" height="372"/>
         <image name="PEER button" width="484" height="372"/>
