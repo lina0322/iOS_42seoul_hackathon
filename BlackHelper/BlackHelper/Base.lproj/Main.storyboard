@@ -548,24 +548,15 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9B-na-ih6">
-                                <rect key="frame" x="50" y="97" width="116" height="53"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <rect key="frame" x="25" y="25" width="68" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="&lt; BACK"/>
                                 <connections>
                                     <action selector="back" destination="hZw-1S-hKL" eventType="touchUpInside" id="EV8-qB-JCd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2c-a6-ZIw">
-                                <rect key="frame" x="881" y="97" width="93" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <state key="normal" title="DONE"/>
-                                <connections>
-                                    <action selector="done" destination="hZw-1S-hKL" eventType="touchUpInside" id="Mfs-a6-xdu"/>
-                                </connections>
-                            </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnk-JL-YQj">
-                                <rect key="frame" x="0.0" y="200" width="1024" height="1146"/>
+                                <rect key="frame" x="0.0" y="66" width="1024" height="1280"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -577,11 +568,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="fcV-c1-Ofr" firstAttribute="bottom" secondItem="Qnk-JL-YQj" secondAttribute="bottom" id="BPu-sm-jIf"/>
+                            <constraint firstItem="l9B-na-ih6" firstAttribute="top" secondItem="fcV-c1-Ofr" secondAttribute="top" constant="25" id="ICU-GJ-Nji"/>
                             <constraint firstItem="Qnk-JL-YQj" firstAttribute="leading" secondItem="fcV-c1-Ofr" secondAttribute="leading" id="YEi-EA-Ub6"/>
                             <constraint firstItem="fcV-c1-Ofr" firstAttribute="trailing" secondItem="Qnk-JL-YQj" secondAttribute="trailing" id="gW3-ln-Ahk"/>
-                            <constraint firstItem="l9B-na-ih6" firstAttribute="leading" secondItem="fcV-c1-Ofr" secondAttribute="leading" constant="50" id="pSF-PD-kRe"/>
-                            <constraint firstItem="Qnk-JL-YQj" firstAttribute="top" secondItem="fcV-c1-Ofr" secondAttribute="top" constant="200" id="qXQ-vg-ju1"/>
-                            <constraint firstItem="Qnk-JL-YQj" firstAttribute="top" secondItem="l9B-na-ih6" secondAttribute="bottom" constant="50" id="qtN-cf-YKm"/>
+                            <constraint firstItem="l9B-na-ih6" firstAttribute="leading" secondItem="fcV-c1-Ofr" secondAttribute="leading" constant="25" id="pSF-PD-kRe"/>
+                            <constraint firstItem="Qnk-JL-YQj" firstAttribute="top" secondItem="l9B-na-ih6" secondAttribute="bottom" constant="5" id="qtN-cf-YKm"/>
                         </constraints>
                     </view>
                     <connections>
