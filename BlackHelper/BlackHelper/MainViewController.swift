@@ -41,7 +41,11 @@ class MainViewController: UIViewController {
                 activityIndicator.startAnimating()
             }
             setupAPIData()
-            
+            while (CadetData.me == nil) {}
+            getCoalitionInfo(forUserId: CadetData.me!.userId){coaName in
+                CadetData.me!.coalitionName = coaName
+                
+            }
             guard let homeViewVC = self.storyboard?.instantiateViewController(withIdentifier: View.tapBar.rawValue) else { return }
             homeViewVC.modalPresentationStyle = .fullScreen
             present(homeViewVC, animated: true, completion: nil)
@@ -63,11 +67,30 @@ class MainViewController: UIViewController {
             guard let data = responseJSON else { return }
             print(data)
             CadetData.me = CadetProfile(data: data)
-            print(CadetData.me?.username)
+            
         }
-        print(CadetData.me?.username)
     }
     
+    func getCoalitionInfo(forUserId id: Int, completionHandler: @escaping (String) -> Void) {
+        request(url: Constants.baseURL + "users/\(id)/coalitions") { (responseJSON) in
+            guard let data = responseJSON, data.isEmpty == false else {
+                completionHandler("Unknown")
+                return
+            }
+            var lowestId = data.arrayValue[0]["id"].intValue
+            var coaName = data.arrayValue[0]["name"].stringValue
+            
+            let piscineCoas = [9, 10, 11, 12]
+            for coalition in data.arrayValue {
+                let id = coalition["id"].intValue
+                if id <= lowestId && !piscineCoas.contains(id) {
+                    lowestId = id
+                    coaName = coalition["name"].stringValue
+                }
+            }
+            completionHandler(coaName)
+        }
+    }
     
     func request(url: String, cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy, completionHandler: @escaping ((JSON?) -> Void)) {
         let encodedURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)

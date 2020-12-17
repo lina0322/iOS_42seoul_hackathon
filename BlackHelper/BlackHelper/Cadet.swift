@@ -31,6 +31,9 @@ class CadetProfile {
     var correctionPoints: Int
     var level: Double = 0
     
+    var coalitionName: String = ""
+    
+    
     var piscineMonth: String
     var piscineYear: String
     
@@ -172,4 +175,5 @@ class CadetProfile {
         }
         return piscineDays
     }
+    
 }
