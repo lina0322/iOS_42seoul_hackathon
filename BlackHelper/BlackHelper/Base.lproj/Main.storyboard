@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpZ-Nb-qY1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kpZ-Nb-qY1">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pc3-f6-5Uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2228.90625" y="-560.02928257686676"/>
+            <point key="canvasLocation" x="2229" y="-275"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="O3k-CL-oeU">
@@ -196,18 +196,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U9-6j-DJw">
+                                <rect key="frame" x="188.5" y="1164" width="647" height="132"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <state key="normal" title="채팅방 입장 버튼"/>
+                                <connections>
+                                    <segue destination="IxC-5j-MzE" kind="show" id="axY-WY-FN2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5C4-3z-XqZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1A9-Ng-ThL" firstAttribute="centerX" secondItem="2Ze-Qf-f6t" secondAttribute="centerX" id="BHQ-CU-wqY"/>
+                            <constraint firstItem="5C4-3z-XqZ" firstAttribute="bottom" secondItem="8U9-6j-DJw" secondAttribute="bottom" constant="50" id="CEO-k1-WmQ"/>
+                            <constraint firstItem="8U9-6j-DJw" firstAttribute="centerX" secondItem="2Ze-Qf-f6t" secondAttribute="centerX" id="Qs8-Cm-O4g"/>
                             <constraint firstItem="1A9-Ng-ThL" firstAttribute="centerY" secondItem="2Ze-Qf-f6t" secondAttribute="centerY" id="u53-cx-B4s"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W37-Oe-Cdi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049" y="-890"/>
+            <point key="canvasLocation" x="2967" y="-560"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BbJ-l7-Zz1">
@@ -223,18 +233,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="My4-8L-OSe">
+                                <rect key="frame" x="188.5" y="1164" width="647" height="132"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <state key="normal" title="채팅방 입장 버튼"/>
+                                <connections>
+                                    <segue destination="IxC-5j-MzE" kind="show" id="rhX-at-d9U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G8S-H5-cZg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="G8S-H5-cZg" firstAttribute="bottom" secondItem="My4-8L-OSe" secondAttribute="bottom" constant="50" id="4qq-9S-SZa"/>
                             <constraint firstItem="mCc-dv-0uU" firstAttribute="centerX" secondItem="4XU-vX-xND" secondAttribute="centerX" id="FQW-EU-92R"/>
                             <constraint firstItem="mCc-dv-0uU" firstAttribute="centerY" secondItem="4XU-vX-xND" secondAttribute="centerY" id="K1w-IO-bQJ"/>
+                            <constraint firstItem="My4-8L-OSe" firstAttribute="centerX" secondItem="4XU-vX-xND" secondAttribute="centerX" id="h7b-OU-7gI"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KT-Di-jPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049" y="-217"/>
+            <point key="canvasLocation" x="2967" y="104"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gXk-MS-O6W">
@@ -262,35 +282,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2R-md-Dav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229" y="104"/>
+            <point key="canvasLocation" x="2229" y="438"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="VEM-6U-45d">
+        <scene sceneID="2ue-bz-v8N">
             <objects>
-                <viewController id="yyM-JS-XPm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Rsq-8Y-Ki8">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                <viewController storyboardIdentifier="ChatView" id="IxC-5j-MzE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Wo-le-JyF">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어플 이용 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIg-tf-GCA">
-                                <rect key="frame" x="231.5" y="623" width="561" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채팅방" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7d-GP-V0z">
+                                <rect key="frame" x="222" y="438" width="260" height="120"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="lMj-8T-MxR"/>
+                        <viewLayoutGuide key="safeArea" id="1QS-uY-xqf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hIg-tf-GCA" firstAttribute="centerY" secondItem="Rsq-8Y-Ki8" secondAttribute="centerY" id="BWo-KS-BrY"/>
-                            <constraint firstItem="hIg-tf-GCA" firstAttribute="centerX" secondItem="Rsq-8Y-Ki8" secondAttribute="centerX" id="KTx-jM-Hvn"/>
+                            <constraint firstItem="P7d-GP-V0z" firstAttribute="centerX" secondItem="8Wo-le-JyF" secondAttribute="centerX" id="F8V-zT-t0k"/>
+                            <constraint firstItem="P7d-GP-V0z" firstAttribute="centerY" secondItem="8Wo-le-JyF" secondAttribute="centerY" id="mcd-hj-ZRe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" image="person.circle.fill" catalog="system" id="hzR-jD-rVU"/>
+                    <navigationItem key="navigationItem" id="Gv2-eG-CTm"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XYI-EC-nvL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4V3-fv-09e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229" y="775"/>
+            <point key="canvasLocation" x="3690" y="-275"/>
         </scene>
         <!--Web Login View Controller-->
         <scene sceneID="WWm-aM-eH8">
@@ -317,8 +337,9 @@
                                     <action selector="back" destination="hZw-1S-hKL" eventType="touchUpInside" id="EV8-qB-JCd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2c-a6-ZIw">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2c-a6-ZIw">
                                 <rect key="frame" x="881" y="97" width="93" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="DONE"/>
                                 <connections>
@@ -384,7 +405,6 @@
                     <connections>
                         <segue destination="i3t-nL-q4e" kind="relationship" relationship="viewControllers" id="jIN-GF-7zS"/>
                         <segue destination="PWm-rC-m9s" kind="relationship" relationship="viewControllers" id="PE5-o1-OYu"/>
-                        <segue destination="yyM-JS-XPm" kind="relationship" relationship="viewControllers" id="bs7-Uw-o1k"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4X-KE-1jp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -392,6 +412,9 @@
             <point key="canvasLocation" x="1504.6875" y="103.66032210834553"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rhX-at-d9U"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="HELPER button" width="484" height="372"/>
         <image name="PEER button" width="484" height="372"/>
@@ -400,7 +423,6 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="intra login button" width="628" height="127"/>
         <image name="lee_mark" width="139" height="242.5"/>
-        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="status bar" width="817" height="145"/>
         <image name="title" width="762" height="319"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">

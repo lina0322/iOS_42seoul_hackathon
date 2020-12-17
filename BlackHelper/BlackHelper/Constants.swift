@@ -26,6 +26,7 @@ enum View: String {
     case helper = "HelperView"
     case peer = "PeerView"
     case tapBar = "TapBar"
+    case chat = "ChatView"
 }
 
 struct Constants {
