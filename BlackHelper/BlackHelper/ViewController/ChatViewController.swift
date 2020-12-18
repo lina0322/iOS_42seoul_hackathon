@@ -21,24 +21,30 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
         super.viewDidLoad()
         let username = CadetData.me!.username
         let user = IRCUser(username: username, realName: username, nick: username)
-        
         server = IRCServer.connect("192.168.0.5", port: 6667, user: user)
         server?.delegate = self
         
         channel = server?.join("Libft")
         channel?.delegate = self
+        
         sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
-        DispatchQueue.global().async {
-            while (true){
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadChatView), name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        DispatchQueue.global(qos: .background).async { [self] in
+            while(true){
                 sleep(1)
-                self.getMessageList()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil, userInfo: nil)
+                self.view.setNeedsLayout()
             }
         }
     }
     
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         comments.removeAll()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil, userInfo: nil)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,8 +65,7 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
     func didRecieveMessage(_ channel: IRCChannel, message: String) {
         comments.append(message)
     }
-    
-    func getMessageList(){
+    @objc func reloadChatView(){
         self.chatTableView.reloadData()
     }
     
@@ -68,6 +73,8 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
         if (messageTextField.hasText) {
             channel?.send(messageTextField.text!)
             comments.append(messageTextField.text!)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil, userInfo: nil)
+            
             messageTextField.text = ""
         }
     }
