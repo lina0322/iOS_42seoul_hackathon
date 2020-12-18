@@ -19,6 +19,8 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpKeyboardDoneButton()
+        
         let username = CadetData.me!.username
         let user = IRCUser(username: username, realName: username, nick: username)
         server = IRCServer.connect("192.168.0.5", port: 6667, user: user)
@@ -38,13 +40,10 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
         }
     }
     
-    
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         comments.removeAll()
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil, userInfo: nil)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,6 +64,7 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
     func didRecieveMessage(_ channel: IRCChannel, message: String) {
         comments.append(message)
     }
+    
     @objc func reloadChatView(){
         self.chatTableView.reloadData()
     }
@@ -74,9 +74,18 @@ class ChatViewController: UIViewController,URLSessionDelegate,IRCServerDelegate,
             channel?.send(messageTextField.text!)
             comments.append(messageTextField.text!)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil, userInfo: nil)
-            
             messageTextField.text = ""
         }
+    }
+    
+    private func setUpKeyboardDoneButton() {
+            let toolBarKeyboard = UIToolbar()
+            toolBarKeyboard.sizeToFit()
+            let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(sendMessage))
+            
+            toolBarKeyboard.items = [flexibleSpace, doneButton]
+            messageTextField.inputAccessoryView = toolBarKeyboard
     }
     
     @IBAction func cancel() {
